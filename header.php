@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-    
+
     <!-- Подключение стилей шапки -->
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/header.css">
-    
+
     <?php wp_head(); ?>
 </head>
 
@@ -30,14 +30,14 @@
                             </a>
                         <?php endif; ?>
                     </div>
-                    
+
                     <!-- Слоган -->
                     <?php if ($slogan = carbon_get_theme_option('slogan')): ?>
                         <div class="header-slogan">
                             <span class="slogan-text"><?php echo esc_html($slogan); ?></span>
                         </div>
                     <?php endif; ?>
-                    
+
                     <!-- Адрес -->
                     <?php if ($address = carbon_get_theme_option('address')): ?>
                         <div class="header-address">
@@ -49,7 +49,7 @@
                             <div class="address-text"><?php echo esc_html($address); ?></div>
                         </div>
                     <?php endif; ?>
-                    
+
                     <!-- График работы -->
                     <?php if ($worktime = carbon_get_theme_option('worktime')): ?>
                         <div class="header-worktime">
@@ -61,20 +61,11 @@
                             <div class="worktime-text"><?php echo esc_html($worktime); ?></div>
                         </div>
                     <?php endif; ?>
-                    
+
                     <!-- Контакты (почта и телефоны) -->
                     <div class="header-contacts">
-                        <?php if ($email = carbon_get_theme_option('email')): ?>
-                            <div class="contact-item email">
-                                <div class="contact-icon">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
-                                    </svg>
-                                </div>
-                                <a href="mailto:<?php echo esc_attr($email); ?>" class="contact-text"><?php echo esc_html($email); ?></a>
-                            </div>
-                        <?php endif; ?>
-                        
+
+
                         <div class="contact-phones">
                             <?php if ($phone1 = carbon_get_theme_option('phone1')): ?>
                                 <div class="phone-item">
@@ -88,7 +79,18 @@
                                     </a>
                                 </div>
                             <?php endif; ?>
-                            
+
+                            <?php if ($email = carbon_get_theme_option('email')): ?>
+                                <div class="contact-item email">
+                                    <div class="contact-icon">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
+                                        </svg>
+                                    </div>
+                                    <a href="mailto:<?php echo esc_attr($email); ?>" class="contact-text"><?php echo esc_html($email); ?></a>
+                                </div>
+                            <?php endif; ?>
+
                             <?php if ($phone2 = carbon_get_theme_option('phone2')): ?>
                                 <div class="phone-item">
                                     <div class="phone-icon">
@@ -103,7 +105,7 @@
                             <?php endif; ?>
                         </div>
                     </div>
-                    
+
                     <!-- Мессенджеры -->
                     <div class="header-messengers">
                         <?php if ($tg_link = carbon_get_theme_option('tg_link')): ?>
@@ -113,7 +115,7 @@
                                 </svg>
                             </a>
                         <?php endif; ?>
-                        
+
                         <?php if ($vk_link = carbon_get_theme_option('vk_link')): ?>
                             <a href="<?php echo esc_url($vk_link); ?>" class="messenger-link vk-link" target="_blank" title="ВКонтакте">
                                 <svg width="22" height="22" viewBox="0 0 448 512" fill="currentColor">
@@ -121,7 +123,7 @@
                                 </svg>
                             </a>
                         <?php endif; ?>
-                        
+
                         <?php if ($max_link = carbon_get_theme_option('max_link')): ?>
                             <a href="<?php echo esc_url($max_link); ?>" class="messenger-link max-link" target="_blank" title="Max">
                                 <svg width="24" height="24" viewBox="0 0 42 42" fill="currentColor">
@@ -130,7 +132,7 @@
                             </a>
                         <?php endif; ?>
                     </div>
-                    
+
                     <!-- Кнопка заказать звонок -->
                     <button class="callback-btn" data-modal="callback">
                         <span class="callback-icon">
@@ -143,7 +145,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Нижняя часть шапки с меню -->
         <div class="header-bottom">
             <div class="container">
@@ -159,7 +161,7 @@
                         ));
                         ?>
                     </nav>
-                    
+
                     <!-- Мобильное меню (бургер) -->
                     <div class="mobile-menu-toggle">
                         <span class="burger-line"></span>

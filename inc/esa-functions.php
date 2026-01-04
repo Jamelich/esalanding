@@ -15,10 +15,11 @@ function wpprog_theme_options()
             Field::make('image', 'utp_banner_slide_mob', 'Баннер для моб версии')->set_value_type('url')->set_width(50),
         ))
 
-        ->add_tab(__('Блок раскрытия информации'), array(
+        ->add_tab(__('Блок раскрытия информации (о компании)'), array(
             Field::make('rich_text', 'reneval_text', 'Текст блока')->set_width(80),
             Field::make('media_gallery', 'reneval_gallery', 'Фото блока для слайдера')->set_type(['image'])
         ))
+        
         ->add_tab(__('Блок суперпредложения'), array(
             Field::make('image', 'super_offer_photo', __('Фото'))->set_value_type('url')->set_width(25),
             Field::make('text', 'super_offer_name', __('Название'))->set_width(25),

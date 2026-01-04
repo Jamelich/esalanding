@@ -3,6 +3,33 @@
     --color-vk: #0077FF;
     --color-telegram: #0088CC;
     --color-max: #6a3ae6;
+    --color-primary: #007bff;
+    --color-primary-hover: #0056b3;
+    --color-secondary: #f8f9fa;
+    --color-text: #333;
+    --color-text-light: #666;
+    --color-text-lighter: #ccc;
+    --color-white: #fff;
+    --color-black: #1a1a1a;
+    --color-dark-bg: #111;
+    --color-border: #e9ecef;
+    --color-border-dark: #333;
+    --color-accent: #007bff;
+    
+    /* Переменные для шрифтов */
+    --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    --font-size-base: 16px;
+    --font-size-small: 14px;
+    --font-size-smaller: 12px;
+    --font-size-large: 18px;
+    --font-size-larger: 20px;
+    --font-size-xl: 22px;
+    --font-size-xxl: 28px;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
     --radius-lg: 8px;
     --transition-fast: 0.2s ease;
 }

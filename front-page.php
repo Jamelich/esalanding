@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-<?php /* get_template_part('parts/utp');*/ ?>
-<?php /* get_template_part('parts/about');*/ ?>
+<?php get_template_part('parts/utp-banner'); /* Блок УТП с одним статичным баннером */ ?>
+<?php get_template_part('parts/about-reneval'); /* Блок раскрытия информации (о компании) */ ?>
 <?php /* get_template_part('parts/stats');*/ ?>
 <?php /* get_template_part('parts/super_offer');*/ ?>
 <?php /* get_template_part('parts/offer');*/ ?>

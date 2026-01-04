@@ -1,0 +1,331 @@
+/* about-reneval.css - РАБОЧАЯ ВЕРСИЯ */
+
+/* Стили блока "О компании" */
+.section-about-company {
+    padding: 80px 0;
+    background-color: var(--color-white);
+    /* НЕ ДОБАВЛЯЕМ opacity: 0 здесь! */
+}
+
+/* УБИРАЕМ ЭТУ АНИМАЦИЮ - она скрывает весь блок! */
+/* .section-about-company[data-animate-on-scroll] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.section-about-company[data-animate-on-scroll].animated {
+    opacity: 1;
+    transform: translateY(0);
+} */
+
+.about-company-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+@media (max-width: 992px) {
+    .about-company-wrapper {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .section-about-company {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-company-wrapper {
+        gap: 40px;
+    }
+    
+    .section-about-company {
+        padding: 40px 0;
+    }
+}
+
+/* Стили текстовой части */
+.about-company-text {
+    color: var(--color-text);
+    /* НАЧАЛЬНОЕ СОСТОЯНИЕ ДЛЯ АНИМАЦИИ */
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s ease-out;
+}
+
+/* КОГДА ЭЛЕМЕНТ ПОЯВЛЯЕТСЯ */
+.about-company-text.animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-company-content {
+    line-height: 1.7;
+    font-size: var(--font-size-base);
+}
+
+.about-company-content h2,
+.about-company-content h3,
+.about-company-content h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--color-black);
+    font-weight: var(--font-weight-semibold);
+}
+
+.about-company-content h2 {
+    font-size: var(--font-size-xxl);
+    margin-bottom: 25px;
+}
+
+.about-company-content h3 {
+    font-size: var(--font-size-xl);
+}
+
+.about-company-content h4 {
+    font-size: var(--font-size-larger);
+}
+
+.about-company-content strong {
+    color: var(--color-accent);
+    font-weight: var(--font-weight-semibold);
+}
+
+.about-company-content em {
+    font-style: italic;
+    color: var(--color-text-light);
+}
+
+.about-company-content ul,
+.about-company-content ol {
+    margin: 20px 0 25px 0;
+    padding-left: 24px;
+}
+
+.about-company-content ul li {
+    list-style-type: disc;
+    margin-bottom: 8px;
+    padding-left: 8px;
+}
+
+.about-company-content ol li {
+    list-style-type: decimal;
+    margin-bottom: 8px;
+    padding-left: 8px;
+}
+
+.about-company-content p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.about-company-content p:last-child {
+    margin-bottom: 0;
+}
+
+.about-company-content blockquote {
+    border-left: 4px solid var(--color-accent);
+    padding-left: 20px;
+    margin: 25px 0;
+    font-style: italic;
+    color: var(--color-text-light);
+}
+
+.about-company-content a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.about-company-content a:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+}
+
+/* Стили для слайдера и баннера */
+.about-company-slider {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* НАЧАЛЬНОЕ СОСТОЯНИЕ ДЛЯ АНИМАЦИИ */
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* КОГДА ЭЛЕМЕНТ ПОЯВЛЯЕТСЯ */
+.about-company-slider.animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Задержки для последовательного появления элементов */
+.about-company-text[data-animate-delay="100"] { transition-delay: 0.1s; }
+.about-company-slider[data-animate-delay="200"] { transition-delay: 0.2s; }
+
+/* Стили для одиночного баннера */
+.about-company-slider.single-image .single-banner {
+    position: relative;
+    padding-top: 75%;
+}
+
+.about-company-slider.single-image .banner-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.about-company-slider.single-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    transition: transform 0.3s ease;
+}
+
+.about-company-slider.single-image img:hover {
+    transform: scale(1.02);
+}
+
+/* Стили Swiper контейнера */
+.about-company-swiper {
+    width: 100%;
+    height: 500px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .about-company-swiper {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-company-swiper {
+        height: 300px;
+    }
+}
+
+/* Слайд */
+.swiper-slide {
+    position: relative;
+}
+
+.slide-image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Капция */
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: var(--color-white);
+    padding: 20px;
+    font-size: var(--font-size-small);
+    line-height: 1.4;
+}
+
+/* Навигация Swiper */
+.swiper-button-prev,
+.swiper-button-next {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    transition: all var(--transition-fast);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background: var(--color-white);
+    transform: scale(1.1);
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    font-size: 20px;
+    color: var(--color-text);
+    font-weight: bold;
+}
+
+/* Пагинация */
+.swiper-pagination {
+    position: absolute;
+    bottom: 15px !important;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+    transition: all var(--transition-fast);
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--color-white);
+    transform: scale(1.2);
+}
+
+/* iOS оптимизации */
+.swiper {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.swiper-slide {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+/* Поддержка безопасных зон (iPhone X и новее) */
+@supports (padding: max(0px)) {
+    .section-about-company {
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
+    }
+}
+
+/* Темная тема (опционально) */
+@media (prefers-color-scheme: dark) {
+    .section-about-company {
+        background-color: var(--color-dark-bg);
+    }
+    
+    .about-company-text {
+        color: var(--color-white);
+    }
+    
+    .about-company-content h2,
+    .about-company-content h3,
+    .about-company-content h4 {
+        color: var(--color-white);
+    }
+    
+    .about-company-content strong {
+        color: var(--color-max);
+    }
+    
+    .about-company-slider {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+}

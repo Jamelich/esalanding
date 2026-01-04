@@ -210,7 +210,7 @@ $footer_logo_url = get_template_directory_uri() . '/assets/img/logo-footer.png';
                     <?php endif; ?>
 
                     <!-- Кнопка заказать звонок -->
-                    <button class="footer-callback-btn" data-modal="callback">
+                    <button class="footer-callback-btn callback-btn" data-modal="callback">
                         <span class="callback-icon">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"></path>
@@ -253,7 +253,7 @@ $footer_logo_url = get_template_directory_uri() . '/assets/img/logo-footer.png';
             <?php
             // Проверяем существование формы с ID "f157827" или используем другую форму
             if (shortcode_exists('contact-form-7')) {
-                echo do_shortcode('[contact-form-7 id="f157827" title="Заказать звонок"]');
+                echo do_shortcode('[contact-form-7 id="ea1896c" title="Заказать звонок"]');
             } else {
                 echo '<p>Форма обратной связи не настроена.</p>';
             }
@@ -280,7 +280,7 @@ $footer_logo_url = get_template_directory_uri() . '/assets/img/logo-footer.png';
         }
 
         // Обработчики для кнопок с классом footer-callback-btn
-        document.querySelectorAll('.footer-callback-btn').forEach(button => {
+        document.querySelectorAll('.callback-btn').forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
                 openPopup();
