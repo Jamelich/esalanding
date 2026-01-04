@@ -7,9 +7,6 @@ function esa_add_style()
 
     wp_enqueue_style('normalize', get_stylesheet_directory_uri() . '/assets/css/normalize.css', array());
     wp_enqueue_style('animate', get_stylesheet_directory_uri() . '/assets/css/animate.min.css', array());
-    wp_enqueue_style('swiper', get_stylesheet_directory_uri() . '/assets/css/swiper-bundle.min.css', array());
-    wp_enqueue_style('libs', get_stylesheet_directory_uri() . '/assets/css/libs.min.css', array());
-
 
     wp_enqueue_style('global', get_stylesheet_directory_uri() . '/assets/css/global.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/global.css'));
     wp_enqueue_style('esa-style', get_stylesheet_directory_uri() . '/assets/css/style.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/style.css'));
@@ -35,9 +32,7 @@ function esa_add_style()
     wp_enqueue_style('popup', get_stylesheet_directory_uri() . '/assets/css/popup.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/popup.css'));
 
     wp_enqueue_script('main', get_stylesheet_directory_uri() . '/assets/js/main.js', array(), '1.0.4');
-    // wp_enqueue_script('libs', get_stylesheet_directory_uri() . '/assets/js/libs.js', array(), '1.0.3');
     wp_enqueue_script('animate', get_stylesheet_directory_uri() . '/assets/js/animate.js', array(), '1.0.5');
-    wp_enqueue_script('swiper', get_stylesheet_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), null, true);
 }
 
 // Поддержка миниатюр
@@ -51,7 +46,7 @@ add_theme_support('custom-logo', array(
 ));
 
 // Регистрация меню
-function transfer_register_menus()
+function esa_register_menus()
 {
     register_nav_menus(array(
         'primary' => 'Основное меню в шапке',
@@ -59,6 +54,6 @@ function transfer_register_menus()
         'footer-menu-2' => 'Меню в футере 2'
     ));
 }
-add_action('after_setup_theme', 'transfer_register_menus');
+add_action('after_setup_theme', 'esa_register_menus');
 
 require_once(__DIR__ . '/inc/esa-functions.php');

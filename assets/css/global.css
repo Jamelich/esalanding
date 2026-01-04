@@ -1,0 +1,21 @@
+/* CSS переменные */
+:root {
+    --color-vk: #0077FF;
+    --color-telegram: #0088CC;
+    --color-max: #6a3ae6;
+    --radius-lg: 8px;
+    --transition-fast: 0.2s ease;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Общие стили контейнера */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}

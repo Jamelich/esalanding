@@ -9,14 +9,12 @@ function wpprog_theme_options()
     // страница опций
     Container::make('theme_options', __('Опции темы'))
         ->set_icon('dashicons-admin-generic')
-        // ->add_tab(__('Уникальное торговое предложение'), array(
-        //     Field::make('image', 'utp_banner', 'Фоновый рисунок для УТП')->set_value_type('url')->set_width(20),
-        //     Field::make('rich_text', 'utp_text_left', 'Текст УТП')->set_width(80)
-        // ))
-        ->add_tab(__('Уникальное торговое предложение (слайды)'), array(
-            Field::make('image', 'utp_banner_slide_pc', 'Слайд для ПК версии')->set_value_type('url')->set_width(50),
-            Field::make('image', 'utp_banner_slide_mob', 'Слайд для моб версии')->set_value_type('url')->set_width(50),
+    
+        ->add_tab(__('Уникальное торговое предложение (баннер)'), array(
+            Field::make('image', 'utp_banner_slide_pc', 'Баннер для ПК версии')->set_value_type('url')->set_width(50),
+            Field::make('image', 'utp_banner_slide_mob', 'Баннер для моб версии')->set_value_type('url')->set_width(50),
         ))
+
         ->add_tab(__('Блок раскрытия информации'), array(
             Field::make('rich_text', 'reneval_text', 'Текст блока')->set_width(80),
             Field::make('media_gallery', 'reneval_gallery', 'Фото блока для слайдера')->set_type(['image'])
@@ -86,17 +84,17 @@ function wpprog_theme_options()
             Field::make('text', 'address', __('Адрес'))->set_width(33),
             Field::make('text', 'email', __('Почта'))->set_width(33),
             Field::make('text', 'worktime', __('Время работы'))->set_width(33),
-            Field::make('text', 'vk_link', __('Ссылка на ВК'))->set_width(25),
-            Field::make('text', 'tg_link', __('Ссылка на Telegram'))->set_width(25),
-            Field::make('text', 'wa_link', __('Ссылка на Whatsapp'))->set_width(25),
-            Field::make('text', 'max_link', __('Ссылка на Max'))->set_width(25),
+            Field::make('text', 'vk_link', __('Ссылка на ВК'))->set_width(33),
+            Field::make('text', 'tg_link', __('Ссылка на Telegram'))->set_width(33),
+            Field::make('text', 'max_link', __('Ссылка на Max'))->set_width(33),
             Field::make('rich_text', 'rekv', __('Реквизиты'))->set_width(50),
             Field::make('rich_text', 'code_map', __('Код карты'))->set_width(50),
             Field::make('image', 'manager_photo', 'Фото менеджера')->set_value_type('url')->set_width(10),
             Field::make('image', 'bg_manager_photo', 'Фоновое фото')->set_value_type('url')->set_width(10),
-            Field::make('text', 'manager_phone', 'Телефон менеджера')->set_width(25),
-            Field::make('text', 'manager_name', 'Имя менеджера')->set_width(50),
-            Field::make('text', 'manager_job_title', 'Должность')->set_width(50),
+            Field::make('rich_text', 'slogan', __('Девиз компании (слоган)'))->set_width(50),
+            Field::make('text', 'manager_phone', 'Телефон менеджера')->set_width(33),
+            Field::make('text', 'manager_name', 'Имя менеджера')->set_width(33),
+            Field::make('text', 'manager_job_title', 'Должность')->set_width(33),
             Field::make('text', 'yandex_maps_api_key', __('API ключ Яндекс Карт'))->set_help_text('Получите ключ на https://developer.tech.yandex.ru/'),
         ))
 

@@ -1,0 +1,477 @@
+/* header.css - Стили для шапки сайта */
+
+/* Стили для верхней части шапки */
+.header-top {
+    background-color: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.header-top__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 25px;
+}
+
+/* Логотип */
+.header-logo {
+    flex-shrink: 0;
+}
+
+.header-logo img {
+    max-height: 80px; /* Увеличенный размер логотипа */
+    width: auto;
+    display: block;
+}
+
+.site-title {
+    font-size: 28px; /* Увеличенный размер текста логотипа */
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+    line-height: 1.2;
+}
+
+/* Слоган */
+.header-slogan {
+    flex-shrink: 0;
+    max-width: 200px;
+}
+
+.slogan-text {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+/* Адрес */
+.header-address {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Увеличен отступ */
+    flex-shrink: 0;
+    max-width: 180px;
+}
+
+.address-icon,
+.worktime-icon,
+.contact-icon,
+.phone-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.address-icon svg,
+.worktime-icon svg,
+.contact-icon svg,
+.phone-icon svg {
+    display: block;
+    width: 20px; /* Крупные иконки */
+    height: 20px;
+}
+
+.address-text {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.3;
+}
+
+/* График работы */
+.header-worktime {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Увеличен отступ */
+    flex-shrink: 0;
+    max-width: 180px;
+}
+
+.worktime-text {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.3;
+}
+
+/* Контакты */
+.header-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Увеличен отступ */
+    flex-shrink: 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Увеличен отступ */
+}
+
+.contact-item.email a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: color var(--transition-fast);
+}
+
+.contact-item.email a:hover {
+    color: #007bff;
+}
+
+.contact-phones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Увеличен отступ */
+}
+
+.phone-item {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Увеличен отступ */
+}
+
+.phone-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color var(--transition-fast);
+    white-space: nowrap;
+}
+
+.phone-link:hover {
+    color: #007bff;
+}
+
+/* Мессенджеры */
+.header-messengers {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.messenger-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: white;
+    transition: all var(--transition-fast);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.messenger-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Telegram */
+.messenger-link.tg-link {
+    background: var(--color-telegram);
+}
+
+.messenger-link.tg-link:hover {
+    background: #0077b3;
+}
+
+/* ВКонтакте */
+.messenger-link.vk-link {
+    background: var(--color-vk);
+}
+
+.messenger-link.vk-link:hover {
+    background: #0066cc;
+}
+
+/* Max */
+.messenger-link.max-link {
+    background: var(--color-max);
+}
+
+.messenger-link.max-link:hover {
+    background: #5a2fd4;
+}
+
+.messenger-link svg {
+    display: block;
+}
+
+/* Особый стиль для иконки Max */
+.messenger-link.max-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Кнопка заказать звонок */
+.callback-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Увеличен отступ */
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.callback-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.callback-icon svg {
+    display: block;
+    width: 18px; /* Увеличен размер иконки */
+    height: 18px;
+}
+
+.callback-text {
+    line-height: 1;
+}
+
+/* Нижняя часть шапки с меню */
+.header-bottom {
+    background-color: #f8f9fa;
+    padding: 12px 0;
+    border-top: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.header-bottom__content {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Меню по центру */
+    position: relative;
+}
+
+/* Навигация */
+.header-navigation {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Меню по центру */
+}
+
+.main-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 35px; /* Увеличен отступ между пунктами меню */
+    flex-wrap: wrap;
+    justify-content: center; /* Меню по центру */
+}
+
+.main-menu li {
+    position: relative;
+}
+
+.main-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 0;
+    position: relative;
+    transition: color var(--transition-fast);
+    white-space: nowrap;
+}
+
+.main-menu a:hover {
+    color: #007bff;
+}
+
+/* Мобильное меню */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger-line {
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all var(--transition-fast);
+}
+
+/* Адаптивность */
+@media (max-width: 1280px) {
+    .header-top__content {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .header-slogan,
+    .header-address,
+    .header-worktime {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .header-top__content {
+        flex-wrap: wrap;
+        row-gap: 15px;
+    }
+    
+    .header-logo {
+        order: 1;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .header-logo img {
+        max-height: 70px;
+        margin: 0 auto;
+    }
+    
+    .header-contacts {
+        order: 2;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .contact-phones {
+        flex-direction: row;
+        gap: 20px;
+    }
+    
+    .header-messengers {
+        order: 3;
+        margin-left: auto;
+    }
+    
+    .callback-btn {
+        order: 4;
+    }
+    
+    .main-menu {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-top__content {
+        justify-content: center;
+    }
+    
+    .header-contacts {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .header-messengers {
+        order: 4;
+        margin-left: 0;
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .callback-btn {
+        order: 3;
+    }
+    
+    .header-navigation {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+    
+    .header-navigation.active {
+        display: block;
+    }
+    
+    .main-menu {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .header-bottom__content {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-top__content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .header-logo img {
+        max-height: 60px;
+    }
+    
+    .site-title {
+        font-size: 24px;
+    }
+    
+    .header-contacts {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-item {
+        justify-content: center;
+    }
+    
+    .contact-phones {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .phone-item {
+        justify-content: center;
+    }
+    
+    .header-messengers {
+        gap: 10px;
+    }
+    
+    .callback-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+}
