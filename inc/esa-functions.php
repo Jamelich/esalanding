@@ -3,6 +3,20 @@
 use Carbon_Fields\Field;
 use Carbon_Fields\Container;
 
+// Правильная загрузка Carbon Fields
+add_action('after_setup_theme', 'crb_load');
+function crb_load()
+{
+    $autoloader = __DIR__ . '/vendor/autoload.php';
+
+    if (file_exists($autoloader)) {
+        require_once($autoloader);
+        \Carbon_Fields\Carbon_Fields::boot();
+    } else {
+        error_log('Carbon Fields autoloader not found: ' . $autoloader);
+    }
+}
+
 add_action('carbon_fields_register_fields', 'wpprog_theme_options');
 function wpprog_theme_options()
 {
