@@ -10,28 +10,8 @@ function esa_add_style()
     wp_enqueue_style('swiper', get_stylesheet_directory_uri() . '/assets/css/swiper-bundle.min.css', array());
 
     wp_enqueue_style('global', get_stylesheet_directory_uri() . '/assets/css/global.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/global.css'));
-    wp_enqueue_style('esa-style', get_stylesheet_directory_uri() . '/assets/css/style.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/style.css'));
-    wp_enqueue_style('header', get_stylesheet_directory_uri() . '/assets/css/header.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/header.css'));
     wp_enqueue_style('utp-banner', get_stylesheet_directory_uri() . '/assets/css/utp-banner.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/utp-banner.css'));
     wp_enqueue_style('about-reneval', get_stylesheet_directory_uri() . '/assets/css/about-reneval.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/about-reneval.css'));
-
-    wp_enqueue_style('stats-section', get_stylesheet_directory_uri() . '/assets/css/stats.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/stats.css'));
-    wp_enqueue_style('super-offer', get_stylesheet_directory_uri() . '/assets/css/super_offer.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/super_offer.css'));
-    wp_enqueue_style('offer', get_stylesheet_directory_uri() . '/assets/css/offer.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/offer.css'));
-    wp_enqueue_style('material', get_stylesheet_directory_uri() . '/assets/css/material.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/material.css'));
-    wp_enqueue_style('gallery', get_stylesheet_directory_uri() . '/assets/css/gallery.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/gallery.css'));
-    wp_enqueue_style('additional_services', get_stylesheet_directory_uri() . '/assets/css/additional_services.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/additional_services.css'));
-    wp_enqueue_style('compare', get_stylesheet_directory_uri() . '/assets/css/compare.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/compare.css'));
-    wp_enqueue_style('clients', get_stylesheet_directory_uri() . '/assets/css/clients.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/clients.css'));
-    wp_enqueue_style('lead', get_stylesheet_directory_uri() . '/assets/css/lead.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/lead.css'));
-    wp_enqueue_style('video_reviews', get_stylesheet_directory_uri() . '/assets/css/video_reviews.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/video_reviews.css'));
-    wp_enqueue_style('promo', get_stylesheet_directory_uri() . '/assets/css/promo.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/promo.css'));
-    wp_enqueue_style('faq', get_stylesheet_directory_uri() . '/assets/css/faq.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/faq.css'));
-    wp_enqueue_style('map', get_stylesheet_directory_uri() . '/assets/css/map.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/map.css'));
-    wp_enqueue_style('reviews', get_stylesheet_directory_uri() . '/assets/css/reviews.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/reviews.css'));
-    wp_enqueue_style('footer', get_stylesheet_directory_uri() . '/assets/css/footer.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/footer.css'));
-
-    wp_enqueue_style('popup', get_stylesheet_directory_uri() . '/assets/css/popup.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/popup.css'));
 
     wp_enqueue_script('main', get_stylesheet_directory_uri() . '/assets/js/main.js', array(), '1.0.4');
     wp_enqueue_script('animate', get_stylesheet_directory_uri() . '/assets/js/animate.js', array(), '1.0.6');
@@ -62,14 +42,16 @@ add_action('after_setup_theme', 'esa_register_menus');
 
 // Разрешаем загрузку SVG в медиатеку
 add_filter('upload_mimes', 'svg_upload_allow');
-function svg_upload_allow($mimes) {
+function svg_upload_allow($mimes)
+{
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
 }
 
 // Добавляем поддержку SVG для отображения в медиафайлах
 add_filter('wp_check_filetype_and_ext', 'fix_svg_mime_type', 10, 4);
-function fix_svg_mime_type($data, $file, $filename, $mimes) {
+function fix_svg_mime_type($data, $file, $filename, $mimes)
+{
     $ext = pathinfo($filename, PATHINFO_EXTENSION);
     if ($ext === 'svg') {
         $data['ext'] = 'svg';
@@ -80,7 +62,8 @@ function fix_svg_mime_type($data, $file, $filename, $mimes) {
 
 // Отображаем SVG в медиабиблиотеке как обычные изображения
 add_filter('wp_prepare_attachment_for_js', 'show_svg_in_media_library', 10, 3);
-function show_svg_in_media_library($response, $attachment, $meta) {
+function show_svg_in_media_library($response, $attachment, $meta)
+{
     if ($response['mime'] === 'image/svg+xml') {
         $response['url'] = $response['url'];
         $response['icon'] = $response['url'];
